@@ -12,7 +12,7 @@ let maxMissles;
 let missleSpeedBase;
 let missleSpeedMod;
 let misslesDestoryed;
-let DebugDiv;
+//let DebugDiv;
 let gun1;
 let gun2;
 let gun3;
@@ -26,8 +26,12 @@ function preload() {
 function setup(){
 	background(0);
 	createCanvas(windowWidth, windowHeight);
-	DebugDiv = createDiv('');
+	//DebugDiv = createDiv('');
 	//Create Random City
+	NewGame();
+}
+
+function NewGame(){
 	city = [];
 	for(let i = 5; i < windowWidth - 5; i+=5){
 		let thisWidth = random(25, 35);
@@ -140,7 +144,7 @@ function draw(){
 	});
 	
 	if(buildingsAlive === 0){
-		setup();
+		NewGame();
 	}
 	
 	//Draw Ground
